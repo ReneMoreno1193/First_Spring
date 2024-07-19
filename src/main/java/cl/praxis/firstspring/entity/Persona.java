@@ -12,7 +12,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(name = "PEOPLE")
-public class Person { //Clase y parámetros
+public class Persona { //Clase y parámetros
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int IdPerson;
@@ -23,7 +23,7 @@ public class Person { //Clase y parámetros
     @Column
     private int age;
 
-    public Person (String name, String lastName, int age){
+    public Persona(String name, String lastName, int age){
         this.name = name;
         this.lastName = lastName;
         this.age = age;
