@@ -1,5 +1,6 @@
 package cl.praxis.firstspring.entity;
 
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,24 +12,27 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "Persona")
-public class Persona { //Clase y atributos
+@Table(name = "PORFESOR")
+public class Profesor {
+
     @Id //Primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY) //Esto genera el id autoincremental
-    @Column(name = "id_person", nullable = false)//indica que es la columna de la base de datos y su nombre//el nullable = false significa que no es nulo
-    private long IdPerson;
+    @Column(name = "id_profesor", nullable = false)//indica que es la columna de la base de datos y su nombre//el nullable = false significa que no es nulo
+    private long IdTeacher;
     @Column(nullable = false, length = 50)
     private String name;
     @Column(nullable = true, length = 50)
     private String lastName;
-    @Column
-    private int age;
+    @Column(nullable = false, length = 100)
+    private String email;
+    @Column(nullable = false, length = 50)
+    private String course;
 
-
-    //Constructor
-    public Persona(String name, String lastName, int age){
+    public Profesor(String name, String lastName, String email, String course){
         this.name = name;
         this.lastName = lastName;
-        this.age = age;
+        this.email = email;
+        this.course = course;
     }
+
 }
